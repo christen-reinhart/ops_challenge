@@ -6,12 +6,12 @@
 # Purpose: test                     Purpose test
 
 
-x=helloworld
+y=iamworkingperfectly!
 
 
 # Main
 
-echo $x
+echo $y
 
 
 # End
