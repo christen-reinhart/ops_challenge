@@ -7,11 +7,19 @@
 
 # Declaration of functions 
 
-snacks="skittles"
 #   index 0     index 1     index 2     index 3     index 4
-snacks=("skittles" "poptarts" "snickers" "tamales" "kit kat") 
+snacks=("skittles" "poptarts" "snickers" "tamales" "kit kat")
 
-# Declaration of functions
+# Print array elements
+echo ${snacks[0]}  # This will print "skittles"
+echo ${snacks[1]}  # This will print "poptarts"
+echo ${snacks[2]}  # This will print "snickers"
+echo ${snacks[3]}  # This will print "tamales"
+echo ${snacks[4]}  # This will print "kit kat"
 
-echo ${snacks [0]}
-echo ${snacks [1]}
+
+
+
+
+
+
