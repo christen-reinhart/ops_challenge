@@ -8,14 +8,18 @@
 # Declaration of functions 
 
 #   index 0     index 1     index 2     index 3     index 4
-snacks=("skittles" "poptarts" "snickers" "tamales" "kit kat")
 
-# Print array elements
-echo ${snacks[0]}  # This will print "skittles"
-echo ${snacks[1]}  # This will print "poptarts"
-echo ${snacks[2]}  # This will print "snickers"
-echo ${snacks[3]}  # This will print "tamales"
-echo ${snacks[4]}  # This will print "kit kat"
+# Define directory names in an array
+directories=("file.txt1" "file.txt2" "file.txt3" "file.txt4" "file.txt5")
+
+# Loop through the array and create directories
+for dir in "${directories[@]}"; do
+    mkdir "$dir"
+    echo "Created directory: $dir"
+done
+
+
+
 
 
 
