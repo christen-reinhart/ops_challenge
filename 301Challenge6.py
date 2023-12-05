@@ -1,5 +1,3 @@
-import os
-
 # Declare three variables
 
 name = "John"
