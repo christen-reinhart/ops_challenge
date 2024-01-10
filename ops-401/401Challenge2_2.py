@@ -15,7 +15,7 @@ def send_email(subject, body):
 
     message = MIMEText(body)
     message["Subject"] = subject
-    message["From"] = sender_email
+    message["From"] = sender_email 
     message["To"] = receiver_email
 
     try:
