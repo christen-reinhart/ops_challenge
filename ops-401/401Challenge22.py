@@ -6,14 +6,26 @@ import smtplib
 from email.mime.text import MIMEText
 
 def ping_host(target_ip):
-    # ... (your ping logic here)
+    """Checks host reachability by sending a single ICMP packet."""
+    operating_system = platform.system().lower()
+    command = "ping" if operating_system == "windows" else "ping -c 1"
 
-    def write_to_log(timestamp, status, target_ip, log_file):
-    # ... (your logging logic here)
+    try:
+        subprocess.check_output([command, target_ip], stderr=subprocess.STDOUT, text=True)
+        return True
+    except subprocess.CalledProcessError:
+        return False
 
-        def send_email(subject, body):
+def write_to_log(timestamp, status, target_ip, log_file):
+    """Logs event details to a file."""
+    with open(log_file, 'a') as file:
+        log_entry = f"{timestamp} Network {'Active' if status else 'Inactive'} to {target_ip}\n"
+        file.write(log_entry)
+
+def send_email(subject, body):
+    """Sends an email notification."""
     sender_email = os.getenv("SENDER_EMAIL")  # Retrieve from environment variable
-    sender_password = os.getenv("SENDER_PASSWORD")  # Retrieve from environment variable
+    sender_password = os.getenv("SENDER_PASSWORD")
     receiver_email = "admin@example.com"  # Replace with the administrator's email address
 
     message = MIMEText(body)
@@ -32,8 +44,8 @@ def main():
 
     sender_email = input("Enter your email address: ")
     sender_password = input("Enter your email password: ")
-    os.environ["SENDER_EMAIL"] = sender_email  # Store securely in environment variable
-    os.environ["SENDER_PASSWORD"] = sender_password  # Store securely in environment variable
+    os.environ["SENDER_EMAIL"] = sender_email
+    os.environ["SENDER_PASSWORD"] = sender_password
 
     previous_status = None
 
@@ -47,11 +59,9 @@ def main():
             send_email(subject, body)
 
         print(f"{timestamp} Network {'Active' if status else 'Inactive'} to {target_ip}")
-
         write_to_log(timestamp, status, target_ip, log_file)
 
         previous_status = status
-
         time.sleep(2)
 
 if __name__ == "__main__":
