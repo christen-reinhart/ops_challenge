@@ -8,7 +8,7 @@ from email.mime.text import MIMEText
 def ping_host(target_ip):
     # ... (your ping logic here)
 
-def write_to_log(timestamp, status, target_ip, log_file):
+    def write_to_log(timestamp, status, target_ip, log_file):
     # ... (your logging logic here)
 
         def send_email(subject, body):
