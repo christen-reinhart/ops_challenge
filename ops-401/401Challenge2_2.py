@@ -6,40 +6,34 @@ import smtplib
 from email.mime.text import MIMEText
 
 def ping_host(target_ip):
-    # ... (same as before)
+    # ... (your ping logic here)
+
+def write_to_log(timestamp, status, target_ip, log_file):
+    # ... (your logging logic here)
 
 def send_email(subject, body):
-    sender_email = "your_email@gmail.com"
-    sender_password = "your_password"
+    sender_email = os.getenv("SENDER_EMAIL")  # Retrieve from environment variable
+    sender_password = os.getenv("SENDER_PASSWORD")  # Retrieve from environment variable
     receiver_email = "admin@example.com"  # Replace with the administrator's email address
 
     message = MIMEText(body)
     message["Subject"] = subject
-    message["From"] = sender_email 
+    message["From"] = sender_email
     message["To"] = receiver_email
 
-    try:
-        with smtplib.SMTP("smtp.gmail.com", 587) as server:
-            server.starttls()
-            server.login(sender_email, sender_password)
-            server.sendmail(sender_email, receiver_email, message.as_string())
-        print("Email notification sent successfully.")
-    except Exception as e:
-        print(f"Error sending email notification: {e}")
-
-def write_to_log(timestamp, status, target_ip, log_file):
-    # ... (same as before)
+    with smtplib.SMTP("smtp.gmail.com", 587) as server:
+        server.starttls()
+        server.login(sender_email, sender_password)
+        server.sendmail(sender_email, receiver_email, message.as_string())
 
 def main():
     target_ip = input("Enter the target IP address: ")
     log_file = "uptime_log.txt"
-    email_notification_enabled = False
 
-    email_choice = input("Do you want to enable email notifications? (yes/no): ").lower()
-    if email_choice == "yes":
-        email_notification_enabled = True
-        email = input("Enter your email address: ")
-        password = input("Enter your email password: ")
+    sender_email = input("Enter your email address: ")
+    sender_password = input("Enter your email password: ")
+    os.environ["SENDER_EMAIL"] = sender_email  # Store securely in environment variable
+    os.environ["SENDER_PASSWORD"] = sender_password  # Store securely in environment variable
 
     previous_status = None
 
