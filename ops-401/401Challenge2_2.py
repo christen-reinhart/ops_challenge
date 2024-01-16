@@ -11,7 +11,7 @@ def ping_host(target_ip):
 def write_to_log(timestamp, status, target_ip, log_file):
     # ... (your logging logic here)
 
-def send_email(subject, body):
+        def send_email(subject, body):
     sender_email = os.getenv("SENDER_EMAIL")  # Retrieve from environment variable
     sender_password = os.getenv("SENDER_PASSWORD")  # Retrieve from environment variable
     receiver_email = "admin@example.com"  # Replace with the administrator's email address
