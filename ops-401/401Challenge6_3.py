@@ -1,3 +1,17 @@
+#!/usr/bin/env python3
+
+# Script name Challenge: 401 Class 6
+# Author Name Christen Reinhart
+# Date of Latest Revision 01/17/2024
+# Sources
+# Purpose In Python, Create a Script 
+
+# Prompt the user to select a mode
+# Encrypt a file
+# Decrypt a file 
+# Encrypt a message
+# Decrypt a message
+
 from cryptography.fernet import Fernet
 import os
 
