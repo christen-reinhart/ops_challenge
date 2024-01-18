@@ -124,4 +124,4 @@ if __name__ == "__main__":
         elif args.decrypt:
             decrypt_folder(path, key)
     else:
-        print("Invalid file or folder path.") 
+        print("Invalid file or folder path.")  
