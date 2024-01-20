@@ -2,7 +2,7 @@
 
 # Script name Challenge: 401 Class 6
 # Author Name Christen Reinhart
-# Date of Latest Revision 01/17/2024
+# Date of Latest Revision 01/20/2024
 # Sources
 # Purpose In Python, Create a Script 
 
