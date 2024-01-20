@@ -14,26 +14,31 @@
 
 # pip install
 from cryptography.fernet import Fernet
-# read key from file
 
-key = ''
-with open('secret.key', "rb") as file:
-    key = file.read()
-# read from file
-data = ''
-with open('secret.txt', 'rb') as file:
+# Generate or read the key from a file
+key_file_path = 'secret.key'
+if not os.path.exists(key_file_path):
+    key = Fernet.generate_key()
+    with open(key_file_path, 'wb') as key_file:
+        key_file.write(key)
+else:
+    with open(key_file_path, 'rb') as key_file:
+        key = key_file.read()
+
+# Read data from file
+data_file_path = 'secret.txt'
+with open(data_file_path, 'rb') as file:
     data = file.read()
-    
-# encrypt data
-from cryptography.fernet import Ferent 
 
-f = Fernet(key)
+# Encrypt data
+cipher = Fernet(key)
+encrypted_data = cipher.encrypt(data)
 
-encryptedData = f.encrypt(data)
+# Save encrypted data to a different file
+encrypted_file_path = 'encrypted_secret.txt'
+with open(encrypted_file_path, 'wb') as file:
+    file.write(encrypted_data)
 
-# save encrypted data
-with open('secret.txt', 'wb') as file:
-    file.write(encryptedData)
 
 
 
