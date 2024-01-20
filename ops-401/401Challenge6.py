@@ -13,6 +13,7 @@
 # Decrypt a message
 
 # pip install
+import os  # Add this line to import the os module
 from cryptography.fernet import Fernet
 
 # Generate or read the key from a file
