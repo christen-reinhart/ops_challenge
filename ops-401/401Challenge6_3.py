@@ -14,8 +14,8 @@
 
 # pip install cryptography 
 
-from cryptography.fernet import Fernet
-import os
+from cryptography.fernet import Fernet # imports cryptography
+import os # imports os mudule
 
 # Function to generate or load key
 def generate_or_load_key():
