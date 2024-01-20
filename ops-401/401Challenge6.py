@@ -13,7 +13,7 @@
 # Decrypt a message
 
 # pip install
-
+from cryptography.fernet import Fernet
 # read key from file
 
 key = ''
