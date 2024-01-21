@@ -11,6 +11,8 @@
 # Decrypt a file 
 # Encrypt a message
 # Decrypt a message
+# Encrypt Directory Recursively
+# Decrypt Directory Recursively
 
 from cryptography.fernet import Fernet
 import os
