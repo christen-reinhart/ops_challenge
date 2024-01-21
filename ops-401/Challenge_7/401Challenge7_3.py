@@ -119,11 +119,21 @@ def main():
                 print("Invalid directory path. Please enter a valid directory path.")
         except Exception as e:
             print(f"Error: {e}")
+    elif mode == 6:
+        directory_path = input("Enter directory path to decrypt: ")
+        try:
+            if os.path.isdir(directory_path):
+                decrypt_directory(directory_path, key)
+            else:
+                print("Invalid directory path. Please enter a valid directory path.")
+        except Exception as e:
+            print(f"Error: {e}")
     else:
         print("Invalid mode selected.")
 
 if __name__ == "__main__":
     main()
+
 
 
 
