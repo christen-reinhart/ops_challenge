@@ -53,8 +53,13 @@ def encrypt_string(plaintext, key):
 
 def decrypt_string(ciphertext, key):
     cipher = Fernet(key)
-    decrypted_text = cipher.decrypt(ciphertext).decode()
-    print("Decrypted Message:", decrypted_text)
+    # Strip leading and trailing whitespaces from the ciphertext
+    ciphertext = ciphertext.strip()
+    try:
+        decrypted_text = cipher.decrypt(ciphertext).decode()
+        print("Decrypted Message:", decrypted_text)
+    except Exception as e:
+        print(f"Error decrypting string: {e}")
 
 def encrypt_directory(directory_path, key):
     for root, dirs, files in os.walk(directory_path):
@@ -75,24 +80,38 @@ def main():
 
     if mode in [1, 2]:
         file_path = input("Enter file or directory path: ")
-        if os.path.isfile(file_path):
-            if mode == 1:
-                encrypt_file(file_path, key)
-            elif mode == 2:
-                decrypt_file(file_path, key)
-        elif os.path.isdir(file_path):
-            if mode == 5:
-                encrypt_directory(file_path, key)
-            elif mode == 6:
-                decrypt_directory(file_path, key)
+        if os.path.exists(file_path):
+            try:
+                if os.path.isfile(file_path):
+                    if mode == 1:
+                        encrypt_file(file_path, key)
+                        print("File encrypted successfully.")
+                    elif mode == 2:
+                        decrypt_file(file_path, key)
+                        print("File decrypted successfully.")
+                elif os.path.isdir(file_path):
+                    if mode == 5:
+                        encrypt_directory(file_path, key)
+                        print("Directory encrypted successfully.")
+                    elif mode == 6:
+                        decrypt_directory(file_path, key)
+                        print("Directory decrypted successfully.")
+            except Exception as e:
+                print(f"Error: {e}")
+        else:
+            print("Invalid path. Please enter a valid file or directory path.")
     elif mode in [3, 4]:
         message = input("Enter cleartext string: ")
-        if mode == 3:
-            encrypt_string(message, key)
-        elif mode == 4:
-            decrypt_string(message.encode(), key)
+        try:
+            if mode == 3:
+                encrypt_string(message, key)
+            elif mode == 4:
+                decrypt_string(message.encode(), key)
+        except Exception as e:
+            print(f"Error: {e}")
     else:
         print("Invalid mode selected.")
 
 if __name__ == "__main__":
     main()
+
