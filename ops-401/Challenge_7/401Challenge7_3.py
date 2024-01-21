@@ -35,16 +35,21 @@ def encrypt_file(file_path, key):
 
     with open(file_path + '.enc', 'wb') as file:
         file.write(encrypted_data)
+    print("File encrypted successfully.")
 
 def decrypt_file(file_path, key):
-    with open(file_path, 'rb') as file:
-        encrypted_data = file.read()
+    try:
+        with open(file_path, 'rb') as file:
+            encrypted_data = file.read()
 
-    cipher = Fernet(key)
-    decrypted_data = cipher.decrypt(encrypted_data)
+        cipher = Fernet(key)
+        decrypted_data = cipher.decrypt(encrypted_data)
 
-    with open(file_path[:-4], 'wb') as file:
-        file.write(decrypted_data)
+        with open(file_path[:-4], 'wb') as file:
+            file.write(decrypted_data)
+        print("File decrypted successfully.")
+    except Exception as e:
+        print(f"Error decrypting file {file_path}: {e}")
 
 def encrypt_string(plaintext, key):
     cipher = Fernet(key)
@@ -85,17 +90,13 @@ def main():
                 if os.path.isfile(file_path):
                     if mode == 1:
                         encrypt_file(file_path, key)
-                        print("File encrypted successfully.")
                     elif mode == 2:
                         decrypt_file(file_path, key)
-                        print("File decrypted successfully.")
                 elif os.path.isdir(file_path):
                     if mode == 5:
                         encrypt_directory(file_path, key)
-                        print("Directory encrypted successfully.")
                     elif mode == 6:
                         decrypt_directory(file_path, key)
-                        print("Directory decrypted successfully.")
             except Exception as e:
                 print(f"Error: {e}")
         else:
@@ -114,4 +115,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
