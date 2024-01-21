@@ -49,7 +49,7 @@ def decrypt_file(file_path, key):
             file.write(decrypted_data)
         print("File decrypted successfully.")
     except Exception as e:
-        print(f"Error decrypting file {file_path}: {e}")
+        print(f"Error decrypting file {file_path}: {type(e).__name__} - {e}")
 
 def encrypt_string(plaintext, key):
     cipher = Fernet(key)
@@ -64,7 +64,7 @@ def decrypt_string(ciphertext, key):
         decrypted_text = cipher.decrypt(ciphertext).decode()
         print("Decrypted Message:", decrypted_text)
     except Exception as e:
-        print(f"Error decrypting string: {e}")
+        print(f"Error decrypting string: {type(e).__name__} - {e}")
 
 def encrypt_directory(directory_path, key):
     for root, dirs, files in os.walk(directory_path):
@@ -115,5 +115,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
