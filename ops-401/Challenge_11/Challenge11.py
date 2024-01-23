@@ -6,10 +6,18 @@
 # Sources https://chat.openai.com/share/ee10763b-db45-4241-a631-97da167ec5a9 
 # Purpose In Python, Create a TCP Port Range Scanner  
 
-from scapy.all import Ether, IP
+from scapy.all import Ether, IP, sniff
 
 my_frame = Ether() / IP()
 
 print(my_frame)
+print('-' * 80)
+print(my_frame.show())
+# print(my_frame.summary())
+print('-' * 80)
+
+packets = sniff(count=10)
+
+
 
 
