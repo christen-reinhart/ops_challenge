@@ -6,15 +6,6 @@
 # Sources 
 # Purpose In Python, Generating a Range of IP Addresses from a CIDR Address in Python 
 
-#!/usr/bin/env python
-
-#!/usr/bin/env python
-
-#!/usr/bin/env python
-
-#!/usr/bin/env python
-
-#!/usr/bin/env python
 
 import sys
 from scapy.all import sr1, IP, ICMP, srp, Ether
