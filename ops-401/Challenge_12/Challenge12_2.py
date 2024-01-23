@@ -7,6 +7,8 @@
 # Purpose In Python, Generating a Range of IP Addresses from a CIDR Address in Python 
 
 
+#!/usr/bin/env python3
+
 import sys
 from scapy.all import sr1, IP, ICMP, srp, Ether
 from ipaddress import ip_network
@@ -14,9 +16,9 @@ from ipaddress import ip_network
 def scan_ports(ip, start_port, end_port):
     # ... (existing port scanning logic)
 
-    def icmp_ping_sweep(network):
-        try:
-    network = ip_network(network, strict=False)
+def icmp_ping_sweep(network):
+    try:
+        network = ip_network(network, strict=False)  # Indented within the try block
     except ValueError as e:
         print(f"Error: {e}")
         sys.exit(1)
@@ -41,7 +43,7 @@ def scan_ports(ip, start_port, end_port):
 
     print(f"\n{host_count} hosts are online.")
 
-def user_menu():
+    def user_menu():
     print("Network Security Tool")
     print("1. TCP Port Range Scanner")
     print("2. ICMP Ping Sweep")
