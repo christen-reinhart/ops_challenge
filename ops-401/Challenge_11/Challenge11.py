@@ -17,6 +17,7 @@ print(my_frame.show())
 print('-' * 80)
 
 packets = sniff(count=10)
+print(packets[0])
 
 
 
