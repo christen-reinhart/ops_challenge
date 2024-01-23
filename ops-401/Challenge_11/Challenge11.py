@@ -6,7 +6,9 @@
 # Sources 
 # Purpose In Python, Create a TCP Port Range Scanner  
 
-from scapy import IP, TCP, RandShort, sr1
+from scapy.layers.inet import IP, TCP
+from scapy.sendrecv import RandShort, sr1
+
 
 
 def scan_port(ip, port):
