@@ -14,9 +14,9 @@ from ipaddress import ip_network
 def scan_ports(ip, start_port, end_port):
     # ... (existing port scanning logic)
 
-def icmp_ping_sweep(network):
-    try:
-        network = ip_network(network, strict=False)
+    def icmp_ping_sweep(network):
+        try:
+    network = ip_network(network, strict=False)
     except ValueError as e:
         print(f"Error: {e}")
         sys.exit(1)
