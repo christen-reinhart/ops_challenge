@@ -12,7 +12,7 @@ import ipaddress
 from scapy.all import ICMP, IP, sr1
 
 # Define end host and TCP port range. Take care not to populate the host bits here.
-network = "10.0.2.0/24"
+network = "192.168.0.0/24"
 ip_list = ipaddress.IPv4Network(network).hosts()
 hosts_count = 0
 
