@@ -16,9 +16,9 @@ from ipaddress import ip_network
 def scan_ports(ip, start_port, end_port):
     # ... (existing port scanning logic)
 
-    def icmp_ping_sweep(network):
+def icmp_ping_sweep(network):
     try:
-        network = ip_network(network, strict=False)  # Indented within the try block
+        network = ip_network(network, strict=False)
     except ValueError as e:
         print(f"Error: {e}")
         sys.exit(1)
@@ -43,7 +43,7 @@ def scan_ports(ip, start_port, end_port):
 
     print(f"\n{host_count} hosts are online.")
 
-    def user_menu():
+def user_menu():
     print("Network Security Tool")
     print("1. TCP Port Range Scanner")
     print("2. ICMP Ping Sweep")
@@ -64,5 +64,6 @@ def scan_ports(ip, start_port, end_port):
 
 if __name__ == "__main__":
     user_menu()
+
 
 
