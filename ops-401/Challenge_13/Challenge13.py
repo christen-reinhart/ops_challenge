@@ -1,3 +1,11 @@
+#!/usr/bin/env python3
+
+# Script name Challenge: 401 Challenge 13
+# Author Name Christen Reinhart
+# Date of Latest Revision 01/24/2024
+# Sources https://chat.openai.com/share/2a78385d-36c9-4987-b8cd-ca2f44324eab
+# Purpose In Python, Ping an IP address, scan its ports and determine if any are open.  
+
 import scapy.all as scapy
 
 def port_scan(host_ip, port_range):
