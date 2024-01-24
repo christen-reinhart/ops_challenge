@@ -20,16 +20,16 @@ def scan_ports(dst_port):
     response = sr(IP(dst=host)/TCP(sport=src_port, dport=dst_port, flags='S'), timeout=1, verbose=0)[0]
     
     # conditions to perform task based on port
-    if response is None:
-        print(f"Port {dst_port} is filtered and silently dropped")
-    else:
-        for packet in response:
-            if packet.haslayer(TCP):
-                if packet.getlayer(TCP).flags == 0x12:
-                    send(IP(dst=host)/TCP(sport=src_port, dport=dst_port, flags='R'), verbose=0)
-                    print(f"Port {dst_port} is open")
-                elif packet.getlayer(TCP).flags == 0x14:
-                    print(f"Port {dst_port} is closed")
+if response is None:
+    print(f"Port {dst_port} is filtered and silently dropped")
+else:
+    for packet in response:
+        if TCP in packet and packet[TCP].flags == 0x12:
+            send(IP(dst=host)/TCP(sport=src_port, dport=dst_port, flags='R'), verbose=0)
+            print(f"Port {dst_port} is open")
+        elif TCP in packet and packet[TCP].flags == 0x14:
+            print(f"Port {dst_port} is closed")
+
 
 # create loop to scan ports
 for port in port_range:
