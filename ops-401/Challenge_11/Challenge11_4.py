@@ -6,32 +6,32 @@
 # Sources https://chat.openai.com/share/ee10763b-db45-4241-a631-97da167ec5a9 
 # Purpose In Python, Create a TCP Port Range Scanner 
 
-import sys
 import random
-from scapy.all import Ether, IP, sniff, ARP, sr, ICMP, TCP, send
+from scapy.all import IP, TCP, sr
 
-# assign IP and port range
+# Define host IP and port range
 host = 'scanme.nmap.org'
-port_range = [20, 21, 22, 23, 53, 80, 443]
+port_range = range(20, 1025)  # Adjust the range as needed
 
-# function to scan ports
+# Function to scan ports
 def scan_ports(dst_port):
     src_port = random.randint(1024, 65535)
     response = sr(IP(dst=host)/TCP(sport=src_port, dport=dst_port, flags='S'), timeout=1, verbose=0)[0]
-    
-    # conditions to perform task based on port
+
+    # Conditions to perform tasks based on port
     if response is None:
         print(f"Port {dst_port} is filtered and silently dropped")
     else:
         for packet in response:
-            if TCP in packet and packet[TCP].flags == 0x7:
+            if TCP in packet and packet[TCP].flags == 0x12:
                 send(IP(dst=host)/TCP(sport=src_port, dport=dst_port, flags='R'), verbose=0)
                 print(f"Port {dst_port} is open")
-            elif TCP in packet and packet[TCP].flags == 0x9:
+            elif TCP in packet and packet[TCP].flags == 0x14:
                 print(f"Port {dst_port} is closed")
 
-# create loop to scan ports
+# Loop to scan ports
 for port in port_range:
     scan_ports(port)
+
 
 
