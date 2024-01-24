@@ -24,10 +24,10 @@ def scan_ports(dst_port):
         print(f"Port {dst_port} is filtered and silently dropped")
     else:
         for packet in response:
-            if TCP in packet and packet[TCP].flags == 0x12:
+            if TCP in packet and packet[TCP].flags == 0x7:
                 send(IP(dst=host)/TCP(sport=src_port, dport=dst_port, flags='R'), verbose=0)
                 print(f"Port {dst_port} is open")
-            elif TCP in packet and packet[TCP].flags == 0x14:
+            elif TCP in packet and packet[TCP].flags == 0x9:
                 print(f"Port {dst_port} is closed")
 
 # create loop to scan ports
