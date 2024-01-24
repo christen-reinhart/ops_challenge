@@ -8,6 +8,7 @@
 
 import sys
 from scapy.all import *
+from scapy.all import sr1, TCP, IP, ICMP, srp, Ether
 from ipaddress import ip_network
 
 def tcp_port_range_scanner(ip, port_range):
