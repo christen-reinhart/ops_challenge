@@ -8,7 +8,6 @@
 
 import sys
 from scapy.all import *
-from scapy.all import sr1, TCP, IP, ICMP, srp, Ether
 from ipaddress import ip_network
 
 import scapy.all as scapy
@@ -81,3 +80,4 @@ elif user_choice == "2":
     icmp_ping_sweep(network_address)
 else:
     print("Invalid choice")
+
