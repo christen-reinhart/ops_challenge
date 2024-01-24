@@ -4,15 +4,15 @@ from scapy.all import *
 def tcp_port_range_scanner(ip, port_range):
     # ... (previous implementation)
 
-def icmp_ping_sweep(network_address):
-    online_hosts = 0
-    network = ipaddress.IPv4Network(network_address, strict=False)
-    target_addresses = [str(ip) for ip in network.hosts()]
+    def icmp_ping_sweep(network_address):
+        online_hosts = 0
+        network = ipaddress.IPv4Network(network_address, strict=False)
+        target_addresses = [str(ip) for ip in network.hosts()]
 
-    for target_ip in target_addresses:
-        # Skip network address and broadcast address
-        if target_ip == network.network_address or target_ip == network.broadcast_address:
-            continue
+        for target_ip in target_addresses:
+            # Skip network address and broadcast address
+            if target_ip == network.network_address or target_ip == network.broadcast_address:
+             continue
 
         # Craft ICMP echo request packet
         packet = IP(dst=target_ip) / ICMP()
