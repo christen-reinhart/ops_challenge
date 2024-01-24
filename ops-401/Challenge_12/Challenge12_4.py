@@ -1,0 +1,40 @@
+import ipaddress
+from scapy.all import *
+
+def tcp_port_range_scanner(ip, port_range):
+    # Perform TCP port scanning on the specified IP and port range
+    for port in range(port_range[0], port_range[1] + 1):
+        # Craft TCP SYN packet
+        packet = IP(dst=ip) / TCP(dport=port, flags="S")
+
+        # Send packet and wait for response
+        response = sr1(packet, timeout=1, verbose=0)
+
+        if response is not None and response.haslayer(TCP):
+            if response[TCP].flags == 0x12:
+                print(f"Port {port} is open on {ip}")
+            else:
+                print(f"Port {port} is closed on {ip}")
+
+def icmp_ping_sweep(network_address):
+    # ... (previous implementation)
+
+def main():
+    print("Network Security Tool")
+    print("1. TCP Port Range Scanner Mode")
+    print("2. ICMP Ping Sweep Mode")
+
+    choice = input("Enter your choice (1 or 2): ")
+
+    if choice == "1":
+        ip = input("Enter target IP address: ")
+        port_range = list(map(int, input("Enter port range (start end): ").split()))
+        tcp_port_range_scanner(ip, port_range)
+    elif choice == "2":
+        network_address = input("Enter network address (e.g., 10.10.0.0/24): ")
+        icmp_ping_sweep(network_address)
+    else:
+        print("Invalid choice. Please enter 1 or 2.")
+
+if __name__ == "__main__":
+    main()
