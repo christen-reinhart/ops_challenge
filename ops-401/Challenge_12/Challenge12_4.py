@@ -29,7 +29,7 @@ def tcp_port_range_scanner(ip, port_range):
 def icmp_ping_sweep(network_address):
     # ... (previous implementation)
 
-def main():
+ def main():
     print("Network Security Tool")
     print("1. TCP Port Range Scanner Mode")
     print("2. ICMP Ping Sweep Mode")
