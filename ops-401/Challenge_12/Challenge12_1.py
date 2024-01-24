@@ -8,7 +8,7 @@
 
 import ipaddress
 import sys
-from scapy.all import sr1, IP, ICMP, srp, Ether
+from scapy.all import sr1, IP, TCP, ICMP, srp, Ether
 from ipaddress import ip_network
 
 def scan_ports(ip, start_port, end_port):
