@@ -3,7 +3,7 @@
 # Script name Challenge: 401 Challenge 11
 # Author Name Christen Reinhart
 # Date of Latest Revision 01/22/2024
-# Sources https://chat.openai.com/share/ee10763b-db45-4241-a631-97da167ec5a9 
+# Sources https://chat.openai.com/share/6a733667-0937-42cb-9db7-9b1ecf1ababe 
 # Purpose In Python, Create a TCP Port Range Scanner 
 
 # import modules
