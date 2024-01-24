@@ -9,6 +9,7 @@
 # import modules
 import sys
 from scapy.all import Ether, IP, sniff, ARP, sr1, ICMP, TCP, send
+import random
 
 # assign IP and port range
 host = 'scanme.nmap.org'
@@ -16,7 +17,7 @@ port_range = [20, 21, 22, 23, 53, 80, 443]
 
 # function to scan ports
 def scan_ports(dst_port):
-    src_port = random,randint(1024, 65535)
+    src_port = random.randint(1024, 65535)
     response = sr1(IP(dst=host)/TCP(sport=src_port, dport=dst_port, flags='S'), timeout=1, verbose=0)
     # conditions to perform task based on port
     if response is None:
