@@ -6,8 +6,10 @@
 # Sources https://chat.openai.com/share/ee10763b-db45-4241-a631-97da167ec5a9
 # Purpose In Python, Generating a Range of IP Addresses from a CIDR Address in Python 
 
-import ipaddress
-from scapy.all import *
+import sys
+from scapy.all import sr1, IP, ICMP, srp, Ether
+from ipaddress import ip_network
+
 
 def icmp_ping_sweep(network_address):
     # Get all addresses in the given network
