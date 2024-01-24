@@ -6,10 +6,6 @@
 # Sources https://chat.openai.com/share/ee10763b-db45-4241-a631-97da167ec5a9
 # Purpose In Python, Generating a Range of IP Addresses from a CIDR Address in Python 
 
-import sys
-from scapy.all import *
-from ipaddress import ip_network
-
 import scapy.all as scapy
 
 def tcp_port_range_scanner(host_ip, port_range):
@@ -38,7 +34,7 @@ def tcp_port_range_scanner(host_ip, port_range):
 def icmp_ping_sweep(network_address):
     # Function to perform ICMP Ping Sweep
     # Create a list of all addresses in the given network
-    addresses = [str(ip) for ip in scapy.IP(network_address).hosts()]
+    addresses = [str(ip) for ip in scapy.IP(bytes(network_address, 'utf-8')).hosts()]
 
     # Ping all addresses on the given network except for network address and broadcast address
     online_hosts = 0
@@ -80,4 +76,5 @@ elif user_choice == "2":
     icmp_ping_sweep(network_address)
 else:
     print("Invalid choice")
+
 
