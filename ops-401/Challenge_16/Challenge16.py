@@ -21,11 +21,11 @@ else:
 def get_words():
     nltk.download('words')
     word_list = words.words()
-    print(word_list)    
+    return word_list    
     
 
 if __name__ == "__main__":
-    get_words()
+    words = get_words()
 
     
 
