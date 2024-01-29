@@ -9,6 +9,7 @@
 
 import ssl
 import nltk
+from nltk.corpus import words
 
 try:
     _create_unverified_https_context = ssl._create_unverified_context
@@ -19,6 +20,9 @@ else:
 
 def get_words():
     nltk.download('words')
+    word_list = words.words()
+    print(word_list)    
+    
 
 if __name__ == "__main__":
     get_words()
