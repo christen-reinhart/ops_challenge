@@ -22,10 +22,17 @@ def get_words():
     nltk.download('words')
     word_list = words.words()
     return word_list    
-    
+
+def check_for_word(words):
+    user_answer = input("Enter a word: ")  
+    if user_answer in words:
+        print("The word is not in the dictionary")
+    else:
+        print("The word is not in the dictionary")  
 
 if __name__ == "__main__":
-    words = get_words()
+    external_words = get_words()
+    
 
     
 
