@@ -32,6 +32,9 @@ def check_for_word(words):
 
 if __name__ == "__main__":
     external_words = get_words()
+    # print(external_words
+    # print(word_list)
+    check_for_word(external_words)
     
 
     
