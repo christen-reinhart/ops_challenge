@@ -35,7 +35,7 @@ def check_for_words(words):
     
 def load_external_file():
     password_list = []
-    with open('rockyou.txt', 'r') as file 
+    with open('rockyou.txt', 'r') as file: 
         while True:
             line = file.readline()
             if not line:
