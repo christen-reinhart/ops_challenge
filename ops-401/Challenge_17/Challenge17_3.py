@@ -39,7 +39,7 @@ def get_host():
     return host
 
 def get_user():
-    user = input("Enter a username or enter for default: ") or "donniedarko"
+    user = input("Enter a username or enter for default: ") or "christen"
     return user
 
 def get_password():
