@@ -1,9 +1,7 @@
 #!/usr/bin/env python3
 
-# Script name: Challenge: 401 Challenge 16
+# Script name: Challenge: 401 Challenge 17
 # Author: Christen Reinhart
-# Date of Latest Revision: 01/29/2024
-# Sources:
-#   - https://chat.openai.com/share/ee10763b-db45-4241-a631-97da167ec5a9
-#   - https://www.geeksforgeeks.org/iterate-over-a-set-in-python/
+# Date of Latest Revision: 01/30/2024
+# Sources: https://chat.openai.com/share/10b196e4-6aa3-4072-b3be-8d3d7cddc1a9
 # Purpose: In Python, Generating Automated Brute Force Wordlist Attack
