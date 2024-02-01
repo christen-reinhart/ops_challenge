@@ -89,6 +89,7 @@ def unzip_zip_file(zipped_file):
     
     with ZipFile(zipped_file) as zf:
         zf.extractall(pwd=bytes(password, 'utf-8'))
+        print(f'The file {zipped_file} has been unzipped')
 
 if __name__ == "__main__":
     
