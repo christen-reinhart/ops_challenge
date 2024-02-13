@@ -18,7 +18,7 @@ log = logging.getLogger("my_logger")
 logging.basicConfig(filename='bruteforce.log',level=logging.INFO, format='%(asctime)s - %(levelname)s -%(message)s')
 
 log.info("Hello, World")
-
+log.warning("THIS IS A WARNING!")
 # Define Function
 def do_something():
     log.debug("Doing something!")
