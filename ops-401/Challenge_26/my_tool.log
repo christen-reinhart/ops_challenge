@@ -1,0 +1,3 @@
+2024-02-13 15:43:06,434 - INFO - Starting my_tool
+2024-02-13 15:43:06,434 - ERROR - Encountered a division by zero error: division by zero
+2024-02-13 15:43:06,434 - INFO - Exiting my_tool
