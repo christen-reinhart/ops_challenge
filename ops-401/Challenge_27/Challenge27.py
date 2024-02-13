@@ -12,7 +12,7 @@ from logging.handlers import RotatingFileHandler
 
 # Configure logging with log rotation
 log_file = 'port_scan.log'
-max_bytes = 64 * 64  # 1 KB
+max_bytes = 128 * 128  # 1 KB
 backup_count = 3  # Number of backup log files to keep
 formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
 
