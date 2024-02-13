@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 
-# Script name: Challenge: 401 Challenge 13
+# Script name: Challenge: 401 Challenge 26
 # Author Name: Christen Reinhart
-# Date of Latest Revision: 01/25/2024
-# Sources: https://chat.openai.com/share/d15a5a2d-8f3e-4bbd-bb9f-ecf5d3e3ab73
-# Purpose: In Python, Ping an IP address, scan its ports, and determine if any are open.
+# Date of Latest Revision: 02/12/2024
+# Sources: https://chat.openai.com/share/9a32f1fb-287a-438d-9ff2-34b5341a2fe0
+# Purpose: In Python, Ping an IP address, scan its ports, and log
 
 import scapy.all as scapy
 import logging
