@@ -15,7 +15,7 @@ import os
 log = logging.getLogger("my_logger")
 
 # Configure object
-logging.basicConfig(filename='bruteforce.log',level=logging.INFO, format='%(asctime)s - %(levelname)s -%(message)s')
+logging.basicConfig(filename='bruteforce.log',level=logging.DEBUG, format='%(asctime)s - %(levelname)s -%(message)s')
 
 log.info("Hello, World")
 log.warning("THIS IS A WARNING!")
