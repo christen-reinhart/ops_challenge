@@ -3,7 +3,7 @@
 # Script name: Challenge: 401 Challenge 26
 # Author: Christen Reinhart
 # Date of Latest Revision: 02/12/2024
-# Sources: 
+# Sources: https://chat.openai.com/share/9a32f1fb-287a-438d-9ff2-34b5341a2fe0
 # Purpose: In Python, Logging capabilities to your Python tool.
 
 import logging
