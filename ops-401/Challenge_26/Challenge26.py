@@ -12,23 +12,13 @@ import os
 
 
 # Configure logging
-logging.basicConfig(
-    filename='my_tool.log',
-    level=logging.DEBUG,
-    format='%(asctime)s - %(levelname)s - %(message)s'
-)
+log = logging.getLogger("my_logger")
 
-def main():
-    logging.info('Starting my_tool')
-    try:
-        # Your tool's main functionality here
-        result = 10 / 0  # Intentionally induce a ZeroDivisionError
-    except ZeroDivisionError as e:
-        logging.error('Encountered a division by zero error: %s', e)
-    except Exception as e:
-        logging.exception('An unexpected error occurred: %s', e)
-    finally:
-        logging.info('Exiting my_tool')
+# Configure object
+logging.basicConfig(filename='bruteforce.log',level=logging.INFO, format='%(asctime)s - %(levelname)s -%(message)s')
 
-if __name__ == "__main__":
-    main()
+log.info("Hello, World")
+
+# Define Function
+def do_something():
+    log.debug("Doing something!")
