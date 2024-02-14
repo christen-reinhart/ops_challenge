@@ -31,7 +31,7 @@ stream_handler.setFormatter(formatter)
 logger.addHandler(file_handler)
 logger.addHandler(stream_handler)
 
-# Log some messages
+# Log messages
 logger.info("Hello, World")
 logger.warning("THIS IS A WARNING!")
 
