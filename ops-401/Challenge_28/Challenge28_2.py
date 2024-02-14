@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 
-# Script name: Challenge: 401 Challenge 26
+# Script name: Challenge: 401 Challenge 28
 # Author: Christen Reinhart
-# Date of Latest Revision: 02/12/2024
+# Date of Latest Revision: 02/14/2024
 # Sources: import logging
-# Purpose: In Python, Logging capabilities to your Python tool.
+# Purpose: In Python, Implement Logging capabilities, FileHandler and StreamHandler
 
 import logging
 
