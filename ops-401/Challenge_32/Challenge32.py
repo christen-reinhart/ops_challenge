@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 
-# Script name: Challenge: 401 Challenge 31
+# Script name: Challenge: 401 Challenge 32
 # Author: Christen Reinhart
-# Date of Latest Revision: 02/19/2024
+# Date of Latest Revision: 02/20/2024
 # Sources: import logging
 # Purpose: In Python, Generates hashes of files using hashlib 
 
