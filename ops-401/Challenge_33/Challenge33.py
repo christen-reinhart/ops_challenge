@@ -4,7 +4,7 @@
 # Author: Christen Reinhart
 # Date of Latest Revision: 02/21/2024
 # Sources: https://chat.openai.com/share/07036ee5-b77a-47d2-8da4-5d30a9a43901
-# Purpose: In Python, generating a hash value derived from a target file, uniquely identify file using virustotal
+# Purpose: In Python, Detection and remediation of malware using virustotal
 
 
 import os
