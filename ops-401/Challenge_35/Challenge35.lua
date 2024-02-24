@@ -1,3 +1,11 @@
+#!/usr/bin/env python3
+
+# Script name: Challenge: 401 Challenge 35
+# Author: Christen Reinhart
+# Date of Latest Revision: 02/23/2024
+# Sources: https://chat.openai.com/share/6e1b9f2a-7a84-48c9-b383-7868058e48c9 
+# Purpose: In Kali Linux, write your own .nse script
+
 description = [[
     Gathers basic information about the target.
 ]]
