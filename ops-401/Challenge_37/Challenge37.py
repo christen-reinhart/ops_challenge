@@ -1,5 +1,11 @@
 #!/usr/bin/env python3
 
+# Script name: Challenge: 401 Challenge 37
+# Author: Christen Reinhart
+# Date of Latest Revision: 02/27/2024
+# Sources: https://chat.openai.com/share/4599110a-614e-44ae-89b2-ecd9d77819cf
+# Purpose: In Python create a script that executes from a Linux, Prompts the user to type a URL or IP address, Prompts the user to type a port number.
+
 # The below Python script shows one possible method to return the cookie from a site that supports cookies.
 
 import requests
