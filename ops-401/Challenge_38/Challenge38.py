@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 
-# Script name: Challenge: 401 Challenge 37
+# Script name: Challenge: 401 Challenge 38
 # Author: Christen Reinhart
-# Date of Latest Revision: 02/27/2024
+# Date of Latest Revision: 02/28/2024
 # Sources: https://chat.openai.com/share/a7aa2f2d-866b-4951-be1f-a62732fa5e85
 # Purpose: Python script that detects for SQL vulnerability in the target web app.
 
