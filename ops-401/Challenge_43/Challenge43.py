@@ -1,8 +1,8 @@
 #!/usr/bin/python3
-# Script name: Challenge: 401 Challenge 42
+# Script name: Challenge: 401 Challenge 43
 # Author: Christen Reinhart
-# Date of Latest Revision: 03/05/2024
-# Sources: https://chat.openai.com/share/1dc19c46-d61b-4f93-be15-9cfb68635c0b 
+# Date of Latest Revision: 03/06/2024
+# Sources: https://chat.openai.com/share/39ec9a01-80f9-4837-a739-c8da1ecc7e5d
 # Purpose: Python script that scans IP address and ports.
 
 import socket
